@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+    function Dog(){
+    }
+    var dog1=new Dog();
+    Dog.prototype.shout=function(){
+    window.alert('小狗');
+    }
+    dog1.shout();
+    var dog2=new Dog();
+    //dog2.shout();
+    //希望所有对象共享shout
+    dog2.shout();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="mario.css" type="text/css" rel="stylesheet"/>
+<title>Insert title here</title>
+<script type="text/javascript">
+//设计mario类
+function Mario() {
+	this.x=0;
+	this.y=0;
+	
+	//移动 0->上 1->右 2->下 3->左
+	this.move=function(direct){
+		
+		switch(direct){
+		case 0:
+			var mymario=document.getElementById("mymario");
+			var top=mymario.style.marginTop;
+			top=parseInt(top.substr(0,top.length-2));
+			mymario.style.marginTop=(top-10)+"px";
+			break;
+		case 1:
+			var mymario=document.getElementById("mymario");
+			var left=mymario.style.marginLeft;
+			left=parseInt(left.substr(0,left.length-2));
+			mymario.style.marginLeft=(left+10)+"px";
+			break;
+		case 2:
+			var mymario=document.getElementById("mymario");
+			var top=mymario.style.marginTop;
+			top=parseInt(top.substr(0,top.length-2));
+			mymario.style.marginTop=(top+10)+"px";
+			break;
+		case 3:
+			var mymario=document.getElementById("mymario");
+			var left=mymario.style.marginLeft;
+			left=parseInt(left.substr(0,left.length-2));
+			mymario.style.marginLeft=(left-10)+"px";
+			break;
+		}
+	}
+}
+var mario=new Mario();
+//全局函数
+/*function marioMove(direct){
+	switch(direct){
+	case 0:
+		mario.move(direct);
+		break;
+	case 1:
+		mario.move(direct);
+		break;
+	case 2:
+		mario.move(direct);
+		break;
+	case 3:
+		mario.move(direct);
+		break;
+	}
+}*/
+</script>
+</head>
+<body>
+<div class="body">
+<div class="gamediv">
+<img id="mymario" src="mario.jpg"  style="width:50px;margin-left:100px;margin-top:50px;">
+</div>
+<table class="control">
+<tr><td colspan="3">Console</td></tr>
+<tr><td>**</td><td><input type="button" value="↑↑" onclick="mario.move(0)"></td><td>**</td></tr>
+<tr><td><input type="button" value="←←" onclick="mario.move(3)"></td><td>**</td><td><input type="button" value="→→" onclick="mario.move(1)"></td></tr>
+<tr><td>**</td><td><input type="button" value="↓↓" onclick="mario.move(2)"></td><td>**</td></tr>
+</table>
+</div>
+</body>
+</html>

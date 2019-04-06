@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function Master(){
+	//给动物喂食物
+	this.feed=function(animal,food){
+		window.alert(animal.constructor);
+		document.write("主人给"+animal.name+"喂"+food.name);
+	}
+}
+//写食物
+function Food(name){
+	this.name=name;
+}
+function Fish(name){
+	this.food=Food;
+	this.food(name);
+}
+function Bone(name){
+	this.food=Food;
+	this.food(name);
+}
+function Taozi(name){
+	this.food=Food;
+	this.food(name);
+}
+function Animal(name){
+	this.name=name;
+}
+function Cat(name){
+	this.animal=Animal;
+	this.animal(name);
+}
+function Dog(name){
+	this.animal=Animal;
+	this.animal(name);
+}
+function Monkey(name){
+	this.animal=Animal;
+	this.animal(name);
+}
+var cat=new Cat("小猫咪");
+var dog=new Dog("小狗");
+var fish=new Fish("小鱼");
+var bone=new Bone("骨头");
+var master=new Master;
+master.feed(cat,fish);
+master.feed(new Monkey("小猴"),new Taozi("水蜜桃"));
+</script>
+</head>
+<body>
+
+</body>
+</html>

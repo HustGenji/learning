@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//创建Person实例
+/*function Person() {
+	
+}
+var p1=new Person();
+p1.name="sp";*/
+
+//通过object直接创建对象
+/*var p1=new Object();
+p1.name="sp";
+window.alert(p1.constructor);*/
+
+var arr1=new Array(3);
+arr1[0]="George";
+arr1[1]="John";
+arr1[2]="Thomas";
+/*(for(var i=0;i<arr1.length;i++){
+	document.write(arr1[i]+"&nbsp");
+}
+//使用Array提供的方法颠倒数据
+arr1.reverse();
+for(var i=0;i<arr1.length;i++){
+	document.write(arr1[i]+"&nbsp");
+}*/
+Array.prototype.find=function(val){
+	for(var i=0;i<this.length;i++){
+		if(val==this[i]){
+			return i;}
+		//else{return -1;};
+	}
+	return -1;
+}
+document.writeln(arr1.find("John"));
+</script>
+</head>
+<body>
+
+</body>
+</html>
